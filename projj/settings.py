@@ -125,12 +125,15 @@ STATIC_ROOT = BASE_DIR / "staticfiles"
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-# ✅ CORS & CSRF settings
+# Allow CORS requests
 CORS_ALLOWED_ORIGINS = [
-    "https://studdata.netlify.app",
+    "http://localhost:5173",  # React dev server
+    "https://studdata.netlify.app",  # your deployed frontend
 ]
 
+# CSRF trusted origins (needed for POST/PUT/DELETE)
 CSRF_TRUSTED_ORIGINS = [
+    "http://localhost:5173",
     "https://studdata.netlify.app",
     "https://hubaibp.pythonanywhere.com",
 ]
